@@ -13,6 +13,7 @@
       background-color: #faf7f2;
       font-family: "ZCOOL KuaiLe", "PingFang TC", "Microsoft JhengHei", cursive;
       color: #5a4632;
+      text-align: center;
     }
 
     .container {
@@ -22,7 +23,6 @@
     }
 
     h2 {
-      text-align: center;
       margin-bottom: 20px;
     }
 
@@ -32,6 +32,7 @@
       padding: 16px;
       margin-bottom: 24px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: left;
     }
 
     .card h3 {
@@ -66,18 +67,53 @@
 
     .back-link {
       display: block;
-      text-align: center;
       margin-top: 30px;
       text-decoration: none;
       color: #5a4632;
       font-size: 16px;
+    }
+
+    /* 音樂提示遮罩 */
+    #musicOverlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(250, 247, 242, 0.95);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      cursor: pointer;
+    }
+
+    #musicOverlay div {
+      font-size: 22px;
+      line-height: 1.6;
+    }
+
+    #musicOverlay span {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #9a8c7a;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- 音樂（延續播放） -->
+  <!-- 音樂提示遮罩（最穩定解法） -->
+  <div id="musicOverlay" onclick="startMusic()">
+    <div>
+      🎵 輕觸畫面<br>
+      播放音樂
+      <span>可隨時返回喜帖頁</span>
+    </div>
+  </div>
+
+  <!-- 音樂 -->
   <audio id="bgm" loop>
     <source src="River Flows in You.mp3" type="audio/mpeg">
   </audio>
@@ -87,7 +123,7 @@
 
     <div class="card">
       <h3>🚗 前往路線圖</h3>
-      <p>請依下圖前往會場，建議搭配 Google 地圖使用。</p>
+      <p>建議使用 Google 地圖導航前往會場。</p>
       <img src="map1.jpg" class="map-img" alt="路線圖">
       <a
         href="https://www.google.com/maps/search/?api=1&query=煙波大飯店 新竹湖濱館"
@@ -117,9 +153,11 @@
 
   <script>
     const bgm = document.getElementById("bgm");
+    const overlay = document.getElementById("musicOverlay");
 
-    if (sessionStorage.getItem("musicAllowed") === "true") {
-      bgm.play().catch(() => {});
+    function startMusic() {
+      bgm.play();
+      overlay.style.display = "none";
     }
   </script>
 
