@@ -101,12 +101,6 @@
       color: #5a4632;
       font-size: 20px;
       font-weight: bold;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .link-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
     }
   </style>
 </head>
@@ -138,7 +132,7 @@
     <img src="page1.jpg" alt="page1">
     <img src="page2.jpg" alt="page2">
 
-    <!-- 交通資訊連結 -->
+    <!-- 交通資訊 -->
     <a href="traffic.html" class="link-card">
       🧭 交通資訊（點我查看）
     </a>
@@ -151,6 +145,7 @@
 
     function enterSite() {
       bgm.play();
+      sessionStorage.setItem("musicAllowed", "true");
       enterScreen.style.display = "none";
       musicBtn.style.display = "block";
     }
@@ -159,9 +154,11 @@
       if (bgm.paused) {
         bgm.play();
         musicBtn.textContent = "♪";
+        sessionStorage.setItem("musicAllowed", "true");
       } else {
         bgm.pause();
         musicBtn.textContent = "🔇";
+        sessionStorage.setItem("musicAllowed", "false");
       }
     }
   </script>

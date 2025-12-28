@@ -76,51 +76,52 @@
 </head>
 
 <body>
+
+  <!-- 音樂（延續播放） -->
+  <audio id="bgm" loop>
+    <source src="River Flows in You.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="container">
     <h2>🧭 交通資訊</h2>
 
-    <!-- 路線圖 -->
     <div class="card">
-      <h3>🚗 前往路線說明</h3>
-      <p>
-        請依照下方路線圖前往會場，<br>
-        建議搭配 Google 地圖導航使用。
-      </p>
-      <img src="map1.jpg" alt="前往路線圖" class="map-img">
-
+      <h3>🚗 前往路線圖</h3>
+      <p>請依下圖前往會場，建議搭配 Google 地圖使用。</p>
+      <img src="map1.jpg" class="map-img" alt="路線圖">
       <a
         href="https://www.google.com/maps/search/?api=1&query=煙波大飯店 新竹湖濱館"
         target="_blank"
         class="map-button"
       >
-        📍 點我開啟 Google 地圖導航
+        📍 開啟 Google 地圖導航
       </a>
     </div>
 
-    <!-- 停車指引 -->
     <div class="card">
       <h3>🅿️ 停車指引</h3>
-      <p>
-        飯店設有地下停車場，<br>
-        請依照下圖指示進入並停放車輛。
-      </p>
-      <img src="parking.jpg" alt="停車指引圖" class="map-img">
+      <p>請依照下圖指示進入地下停車場。</p>
+      <img src="parking.jpg" class="map-img" alt="停車指引">
     </div>
 
-    <!-- 全館平面圖 -->
     <div class="card">
-      <h3>🏨 飯店全館平面圖</h3>
-      <p>
-        進入飯店後，<br>
-        可依下圖快速找到婚宴會場位置。
-      </p>
-      <img src="map2.jpg" alt="全館平面圖" class="map-img">
+      <h3>🏨 全館平面圖</h3>
+      <p>進入飯店後，可依下圖快速找到宴會廳。</p>
+      <img src="map2.jpg" class="map-img" alt="平面圖">
     </div>
 
-    <!-- 返回主頁 -->
     <a href="index.html" class="back-link">
       ← 返回電子喜帖
     </a>
   </div>
+
+  <script>
+    const bgm = document.getElementById("bgm");
+
+    if (sessionStorage.getItem("musicAllowed") === "true") {
+      bgm.play().catch(() => {});
+    }
+  </script>
+
 </body>
 </html>
