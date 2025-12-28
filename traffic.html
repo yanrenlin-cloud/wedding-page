@@ -2,61 +2,125 @@
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>交通資訊｜彦任 & 心伶</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: "Noto Sans TC", sans-serif;
       margin: 0;
-      padding: 20px;
-      background-color: #fff8f9;
+      background-color: #faf7f2;
+      font-family: "ZCOOL KuaiLe", "PingFang TC", "Microsoft JhengHei", cursive;
+      color: #5a4632;
     }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
     h2 {
       text-align: center;
+      margin-bottom: 20px;
     }
+
     .card {
-      background: #fff;
-      border-radius: 14px;
+      background-color: #fff;
+      border-radius: 16px;
       padding: 16px;
-      margin-bottom: 16px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .card p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #7a6a58;
+    }
+
+    .map-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 12px;
+    }
+
     .map-button {
       display: block;
-      padding: 12px;
+      margin-top: 16px;
+      padding: 14px;
       text-align: center;
-      background-color: #f7b2b7;
-      color: #fff;
-      border-radius: 10px;
+      background-color: #c8a46a;
+      color: white;
+      border-radius: 12px;
       text-decoration: none;
+      font-size: 18px;
       font-weight: bold;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      text-decoration: none;
+      color: #5a4632;
+      font-size: 16px;
     }
   </style>
 </head>
 
 <body>
-  <h2>🧭 交通資訊</h2>
+  <div class="container">
+    <h2>🧭 交通資訊</h2>
 
-  <div class="card">
-    <h4>🚗 自行開車</h4>
-    <p>
-      導航設定：煙波大飯店 新竹湖濱館<br>
-    </p>
+    <!-- 路線圖 -->
+    <div class="card">
+      <h3>🚗 前往路線說明</h3>
+      <p>
+        請依照下方路線圖前往會場，<br>
+        建議搭配 Google 地圖導航使用。
+      </p>
+      <img src="map1.jpg" alt="前往路線圖" class="map-img">
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=煙波大飯店 新竹湖濱館"
+        target="_blank"
+        class="map-button"
+      >
+        📍 點我開啟 Google 地圖導航
+      </a>
+    </div>
+
+    <!-- 停車指引 -->
+    <div class="card">
+      <h3>🅿️ 停車指引</h3>
+      <p>
+        飯店設有地下停車場，<br>
+        請依照下圖指示進入並停放車輛。
+      </p>
+      <img src="parking.jpg" alt="停車指引圖" class="map-img">
+    </div>
+
+    <!-- 全館平面圖 -->
+    <div class="card">
+      <h3>🏨 飯店全館平面圖</h3>
+      <p>
+        進入飯店後，<br>
+        可依下圖快速找到婚宴會場位置。
+      </p>
+      <img src="map2.jpg" alt="全館平面圖" class="map-img">
+    </div>
+
+    <!-- 返回主頁 -->
+    <a href="index.html" class="back-link">
+      ← 返回電子喜帖
+    </a>
   </div>
-
-  <div class="card">
-    <h4>🚄 大眾運輸</h4>
-    <p>
-      高鐵新竹站 → 計程車約 20 分鐘<br>
-      台鐵新竹站 → 計程車約 15 分鐘
-    </p>
-  </div>
-
-  <a
-    href="https://www.google.com/maps/search/?api=1&query=煙波大飯店 新竹湖濱館"
-    target="_blank"
-    class="map-button"
-  >
-    📍 點我開啟 Google 地圖
-  </a>
 </body>
 </html>
